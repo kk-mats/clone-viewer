@@ -1,11 +1,21 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 
-const CloneFileSelector: React.FunctionComponent = () => {
+const CloneFileSelector: React.FunctionComponent<
+	RouteComponentProps
+> = props => {
 	const [filename, setFileName] = React.useState("Not selected");
 
 	return (
-		<form method="post" action="/api/upload" encType="multipart/form-data">
+		<form
+			method="post"
+			action="/api/upload"
+			encType="multipart/form-data"
+			onSubmit={(): void => {
+				props.history.push(`/view/${filename}`);
+			}}
+		>
 			<label id="filename" htmlFor="CloneFileSelector">
 				{filename === "Not selected"
 					? "Select a detection result file"
@@ -30,4 +40,4 @@ const CloneFileSelector: React.FunctionComponent = () => {
 	);
 };
 
-export default CloneFileSelector;
+export default withRouter(CloneFileSelector);

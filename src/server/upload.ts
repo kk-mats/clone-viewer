@@ -15,7 +15,6 @@ const upload = (req: express.Request, res: express.Response): void => {
 			res.send(`Failed to write ${req.file.destination} with ${err}`);
 			return;
 		}
-		res.redirect(`/view/${req.file.filename}`);
 		console.log(
 			`Uploaded ${req.file.originalname} as ${req.file.filename} size:${req.file.size}`
 		);
