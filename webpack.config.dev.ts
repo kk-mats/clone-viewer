@@ -36,8 +36,9 @@ const config: Configuration = {
 		host: "localhost",
 		port: 8080,
 		proxy: {
-			"/root": {
+			"/api": {
 				target: "http://localhost:3000",
+				pathRewrite: {'^/api' : ''},
 				secure: false,
 				logLevel: "debug"
 			}
