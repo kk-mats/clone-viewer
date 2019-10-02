@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import fetch from "node-fetch";
+import CloneFileSelector from "./components/CloneFileSelector";
 
-
-ReactDOM.render(<Dir />, document.getElementById("root"));
+ReactDOM.render(<CloneFileSelector />, document.getElementById("root"));
