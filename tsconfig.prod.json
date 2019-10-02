@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "es2015",
+		"target": "es5",
+		"jsx": "react",
+		"lib": ["es2019", "dom"],
+		"moduleResolution": "node",
+		"removeComments": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	"include": [
+		"src/client/**/*.tsx",
+		"src/server/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
