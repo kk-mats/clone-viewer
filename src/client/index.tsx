@@ -1,5 +1,5 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import CloneFileSelector from "./components/CloneFileSelector";
+import CloneViewer from "./components/CloneViewer";
 
-ReactDOM.render(<CloneFileSelector />, document.getElementById("root"));
+ReactDOM.render(<CloneViewer />, document.getElementById("root"));
