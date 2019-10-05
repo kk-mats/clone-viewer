@@ -10,10 +10,7 @@ server.get("/", (req, res) => {
 	res.send("Server Home");
 });
 
-server.get<{ filename: string }>("/view/:filename", (req, res) => {
-	console.log("access to view");
-	view(req, res);
-});
+server.get<{ filename: string }>("/view/:filename", view);
 
 server.listen(3000, () => {
 	console.log("CloneViewer started.");

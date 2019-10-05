@@ -25,7 +25,6 @@ const getCloneList = async (
 	}
 
 	const { global, results } = json;
-	console.log(`global = ${global}`);
 	return {
 		target: global.target as string,
 		results: [
