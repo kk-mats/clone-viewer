@@ -1,5 +1,4 @@
 import * as express from "express";
-
 import upload from "./upload";
 import view from "./view";
 
@@ -18,4 +17,9 @@ server.get<{ filename: string }>("/view/:filename", (req, res) => {
 
 server.listen(3000, () => {
 	console.log("CloneViewer started.");
+});
+
+server.use((req, res, next) => {
+	res.status(404);
+	res.render("error", { message: "404: Page Not Found" });
 });
