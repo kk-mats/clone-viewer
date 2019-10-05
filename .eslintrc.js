@@ -33,6 +33,9 @@ module.exports = {
 		},
 		project: "./tsconfig.dev.json"
 	},
+	globals: {
+		document: true
+	},
 	settings: {
 		react: {
 			createClass: "createReactClass", // Regex for Component Factory to use,
@@ -46,7 +49,7 @@ module.exports = {
 		},
 		"import/resolver": {
 			node: {
-			  extensions: [".js", ".jsx", ".ts", ".tsx"]
+				extensions: [".js", ".jsx", ".ts", ".tsx"]
 			}
 		},
 		propWrapperFunctions: [
