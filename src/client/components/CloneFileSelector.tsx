@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import axios, { AxiosResponse } from "axios";
 import { withRouter, RouteComponentProps } from "react-router-dom";
+import * as FormData from "form-data";
 import CloneFileSelectorResponse from "../../models/CloneFileSelectorResponse";
 
 const CloneFileSelector: React.FunctionComponent<RouteComponentProps> = (
