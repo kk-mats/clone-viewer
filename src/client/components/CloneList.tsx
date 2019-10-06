@@ -1,6 +1,4 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
-import fetch from "node-fetch";
 
 import Axios from "axios";
 import CloneListResponse from "../../models/cloneListResponse";
@@ -40,7 +38,7 @@ const CloneList: React.FunctionComponent<Props> = (props: Props) => {
 					const { environment, numberOfClonePairs } = value;
 					const { name, source, cloneDetector } = environment;
 					return (
-						<div key="name">
+						<div key={name}>
 							<h3>
 								{name}({numberOfClonePairs})
 							</h3>
