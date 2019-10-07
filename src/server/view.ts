@@ -24,18 +24,35 @@ const getCloneList = async (
 		return json as { error: string };
 	}
 
-	const { global, results } = json;
+	const { global, results } = json as {
+		global: {
+			target: string;
+		};
+		results: {
+			environment: {
+				name: string;
+				source: string;
+				clone_detector: { name: string };
+				clone_pairs: { file_id: number }[];
+			};
+			clone_pairs: {
+				file_id: number;
+				begin: number;
+				end: number;
+			}[];
+		}[];
+	};
 	return {
-		target: global.target as string,
+		target: global.target,
 		results: [
 			...results.map(value => {
 				const { name, source, clone_detector } = value.environment;
 				return {
 					environment: {
-						name: name as string,
-						source: source as string,
+						name,
+						source,
 						cloneDetector: {
-							name: clone_detector.name as string
+							name: clone_detector.name
 						}
 					},
 					numberOfClonePairs: value.clone_pairs.length
