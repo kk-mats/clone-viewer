@@ -4,19 +4,14 @@ import view from "./view";
 
 const server = express();
 
-server.post("/upload", upload);
+server.post("/api/upload", upload);
 
-server.get("/", (req, res) => {
-	res.send("Server Home");
-});
-
-server.get<{ filename: string }>("/view/:filename", view);
+server.get<{ filename: string }>("/api/view/:filename", view);
 
 server.listen(3000, () => {
 	console.log("CloneViewer started.");
 });
 
 server.use((req, res, next) => {
-	res.status(404);
-	res.render("error", { message: "404: Page Not Found" });
+	res.sendStatus(404);
 });
