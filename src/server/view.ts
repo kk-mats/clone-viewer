@@ -5,6 +5,8 @@ import { promisify } from "util";
 
 import CloneListResponse from "../models/cloneListResponse";
 
+const router = express.Router();
+
 const readCodeFile = async (filename: string): Promise<any> => {
 	const text = await promisify(fs.readFile)(
 		`./clone_cache/${filename}`,
@@ -72,4 +74,6 @@ const view = (
 	});
 };
 
-export default view;
+router.get<{ filename: string }>("/:filename", view);
+
+export default router;

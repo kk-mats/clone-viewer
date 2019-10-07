@@ -4,9 +4,8 @@ import view from "./view";
 
 const server = express();
 
-server.post("/api/upload", upload);
-
-server.get<{ filename: string }>("/api/view/:filename", view);
+server.use("/api/upload", upload);
+server.use("/api/view", view);
 
 server.listen(3000, () => {
 	console.log("CloneViewer started.");

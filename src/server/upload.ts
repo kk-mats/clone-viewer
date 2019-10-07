@@ -2,6 +2,8 @@ import * as express from "express";
 import * as multer from "multer";
 import CloneFileSelectorResponse from "../models/CloneFileSelectorResponse";
 
+const router = express.Router();
+
 const storage = multer.diskStorage({
 	destination: "./clone_cache",
 	filename: (req, file, callback) => {
@@ -31,4 +33,6 @@ const upload = (req: express.Request, res: express.Response): void => {
 	});
 };
 
-export default upload;
+router.post("/", upload);
+
+export default router;
