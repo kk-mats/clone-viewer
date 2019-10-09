@@ -15,7 +15,8 @@
 	"include": [
 		"src/client/**/*.tsx",
 		"src/server/**/*.ts",
-		"src/models/**/*.ts"
+		"src/models/**/*.ts",
+		"src/styles/**/*.ts"
 	],
 	"exclude": [
 		"node_modules"
