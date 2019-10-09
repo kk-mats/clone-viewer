@@ -1,4 +1,4 @@
-type CloneListResponse = {
+type ResultSelectResponse = {
 	target: string;
 	results: [
 		{
@@ -19,4 +19,4 @@ type CloneListResponse = {
 	];
 };
 
-export default CloneListResponse;
+export default ResultSelectResponse;
