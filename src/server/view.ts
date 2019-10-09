@@ -3,7 +3,7 @@ import * as essc from "express-serve-static-core";
 import * as fs from "fs";
 import { promisify } from "util";
 
-import CloneListResponse from "../models/cloneListResponse";
+import ResultSelectResponse from "../models/ResultSelectResponse";
 
 const router = express.Router();
 
@@ -19,7 +19,7 @@ const readCodeFile = async (filename: string): Promise<any> => {
 
 const getCloneList = async (
 	filename: string
-): Promise<CloneListResponse | { error: string }> => {
+): Promise<ResultSelectResponse | { error: string }> => {
 	const json = await readCodeFile(filename);
 
 	if (json.error) {
@@ -61,7 +61,7 @@ const getCloneList = async (
 				};
 			})
 		]
-	} as CloneListResponse;
+	} as ResultSelectResponse;
 };
 
 const view = (
