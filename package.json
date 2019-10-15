@@ -41,6 +41,7 @@
 		"eslint": "^6.2.2",
 		"eslint-config-airbnb": "^18.0.1",
 		"eslint-config-prettier": "^6.1.0",
+		"eslint-import-resolver-webpack": "^0.11.1",
 		"eslint-loader": "^3.0.0",
 		"eslint-plugin-import": "^2.18.2",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
@@ -52,6 +53,7 @@
 		"prettier": "^1.18.2",
 		"ts-loader": "^6.0.4",
 		"ts-node": "^8.3.0",
+		"tsconfig-paths": "^3.9.0",
 		"typescript": "^3.6.3",
 		"webpack": "^4.39.2",
 		"webpack-cli": "^3.3.7",
@@ -59,7 +61,7 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"scripts": {
-		"server": "nodemon -e ts --watch src/server --exec \"ts-node ./src/server/index.ts\"",
+		"server": "nodemon -e ts --watch src/server --exec \"ts-node -r tsconfig-paths/register ./src/server/index.ts\"",
 		"client": "webpack-dev-server --config webpack.config.dev.ts",
 		"dev": "concurrently \"yarn run client\" \"yarn run server\"",
 		"build": "webpack --config webpack.config.prod.ts"

@@ -1,10 +1,10 @@
 import * as path from "path";
-import * as htmlWebpackPlugin from "html-webpack-plugin";
-import { Configuration, DefinePlugin } from "webpack";
+import * as webpack from "webpack";
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
 
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 
-export default {
+const config: webpack.Configuration = {
 	mode: "development",
 	entry: "./src/client/index.tsx",
 	devtool: "inline-source-map",
@@ -56,12 +56,14 @@ export default {
 		path: path.resolve(__dirname, "dist")
 	},
 	plugins: [
-		new DefinePlugin({
+		new webpack.DefinePlugin({
 			"process.env.ASSET_PATH": JSON.stringify(ASSET_PATH)
 		}),
-		new htmlWebpackPlugin({
+		new HtmlWebpackPlugin({
 			template: "./src/client/index.html",
 			filename: "./index.html"
 		})
 	]
-} as Configuration;
+};
+
+export default config;

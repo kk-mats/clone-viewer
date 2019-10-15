@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"module": "es2015",
 		"target": "es5",
 		"jsx": "react",
 		"lib": ["es2019", "dom"],
@@ -10,13 +9,12 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+		"baseUrl": "./src"
 	},
 	"include": [
-		"src/client/**/*.tsx",
-		"src/server/**/*.ts",
-		"src/models/**/*.ts",
-		"src/styles/**/*.ts"
+		"src/**/*.tsx",
+		"src/**/*.ts"
 	],
 	"exclude": [
 		"node_modules"

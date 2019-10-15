@@ -16,7 +16,7 @@ module.exports = {
 		"jsx-a11y"
 	],
 	rules:{
-		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
 		"prettier/prettier": [
 			"error",
 			{
@@ -48,8 +48,9 @@ module.exports = {
 			flowVersion: "0.53" // Flow version
 		},
 		"import/resolver": {
-			node: {
-				extensions: [".js", ".jsx", ".ts", ".tsx"]
+			node:{},
+			webpack: {
+				config: "webpack.config.dev.ts"
 			}
 		},
 		propWrapperFunctions: [
