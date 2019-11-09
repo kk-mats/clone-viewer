@@ -1,10 +1,10 @@
 import * as path from "path";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import * as htmlWebpackPlugin from "html-webpack-plugin";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Configuration } from "webpack";
+import * as webpack from "webpack";
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
 
-const config: Configuration = {
+const ASSET_PATH = process.env.ASSET_PATH || "/";
+
+const config: webpack.Configuration = {
 	mode: "production",
 	entry: "./src/client/index.tsx",
 	module: {
@@ -33,12 +33,15 @@ const config: Configuration = {
 		extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
 	},
 	output: {
+		publicPath: ASSET_PATH,
 		filename: "static/js/bundle.js",
 		path: path.resolve(__dirname, "dist")
 	},
 	plugins: [
-		// eslint-disable-next-line new-cap
-		new htmlWebpackPlugin({
+		new webpack.DefinePlugin({
+			"process.env.ASSET_PATH": JSON.stringify(ASSET_PATH)
+		}),
+		new HtmlWebpackPlugin({
 			template: "./src/client/index.html",
 			filename: "./index.html"
 		})

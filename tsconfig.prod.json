@@ -1,20 +1,20 @@
 {
 	"compilerOptions": {
-		"module": "es2015",
 		"target": "es5",
 		"jsx": "react",
 		"lib": ["es2019", "dom"],
 		"moduleResolution": "node",
 		"removeComments": true,
 		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
 		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+		"baseUrl": "./src"
 	},
 	"include": [
-		"src/client/**/*.tsx",
-		"src/server/**/*.ts"
+		"src/**/*.tsx",
+		"src/**/*.ts"
 	],
 	"exclude": [
 		"node_modules"

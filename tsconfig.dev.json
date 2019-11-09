@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"sourceMap": true
+		"sourceMap": true,
+		"baseUrl": "./src"
 	}
 }
